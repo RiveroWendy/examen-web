@@ -11,53 +11,90 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <link rel ="stylesheet" src="css/style.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-sm">
         <form action="" id="formulario">
             <div class="row">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" pattern="[a-zA-z]{3,15} [a-zA-z]{3,15}" required>
+                <div class="col-lg-6 mt-3">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" class="col-sm-12" id="nombre" name="nombre" pattern="[a-zA-z]{3,15} [a-zA-z]{3,15}" required>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <label for="dni">DNI</label>
+                    <input type="number" class="col-sm-12"  id="dni" name="dni" min="100000" max="99999999" required>
+                </div>
             </div>
             <div class="row">
-                <label for="dni">DNI</label>
-                <input type="number" id="dni" name="dni" min="100000" max="99999999" required>
-            </div>
-            <div class="row">
+                <div class="col-lg-6 mt-3">
                 <label for="cobertura">Cobertura</label>
-                <select name="cobertura" id="cobertura" required>
+                <select name="cobertura" class="col-sm-12"  id="cobertura" required>
                     <option selected></option>
                     <option value="1">Particular</option>
                     <option value="2">Obra Social</option>
                     <option value="2">Prepaga</option>
                 </select>
+              </div>
+              <div class="col-lg-6 mt-3">
+                <div class="d-none mt-3" id="obra-grupo">
+                    <label for="prepaga">Obra Social/Prepaga</label>
+                    <select name="prepaga" class="col-sm-12"  id="prepaga">
+                        <option selected></option>
+                        <option value="1">Union Personal</option>
+                        <option value="2">Accord Salud</option>
+                        <option value="3">OSDE</option>
+                        <option value="4">OSEDAC</option>
+                        <option value="5">Otra</option>
+                    </select>
+                </div>
+            </div>
             </div>
             <div class="row">
-                <label for="prepaga">Obra Social/Prepaga</label>
-                <select name="prepaga" id="prepaga">
-                    <option selected></option>
-                    <option value="1">Union Personal</option>
-                    <option value="2">Accord Salud</option>
-                    <option value="3">OSDE</option>
-                    <option value="4">OSEDAC</option>
-                    <option value="5">Otra</option>
-                </select>
-            </div>
-            <div class="row">
+                <div class="col-lg-6 mt-3">
                 <label for="especialidad">Especialidad</label>
-                <select name="especialidad" id="especialidad" required>
+                <select name="especialidad" class="col-sm-12"  id="especialidad" required>
                     <option selected></option>
                     <option value="1">Alergia e Inmunologia</option>
                     <option value="2">Traumatologia</option>
                     <option value="3">Neumonologia</option>
                 </select>
             </div>
+           
+            <div class="col-lg-6 mt-3">
+            <div class="row d-none" id="grupo-medico">
+                <label for="medico">Medico</label>
+                <select name="medico" class="col-sm-12"  id="medico" required>
+                    <option selected></option>
+                    <option value="1" data-medico="alergia" class="d-none">Dra Juana Lopez</option>
+                    <option value="2" data-medico="alergia" class="d-none">Dr Juan Amadeo</option>
+                    <option value="3" data-medico="trauma" class="d-none">Dra Nancy Torres</option>
+                    <option value="4" data-medico="trauma" class="d-none">Dr Gerardo Ibarra</option>
+                    <option value="5" data-medico="neumo" class="d-none">Dr Luis Giolito</option>
+                </select>
+            </div>
+            </div>
+        </div>
             <div class="row">
-                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Enviar</button>
             </div>
         </form>
-
+    
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Gracias por su
+                    solicitud. Nos contactaremos a la brevedad
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
