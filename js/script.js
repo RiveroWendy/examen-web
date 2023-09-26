@@ -7,22 +7,22 @@ function inicio() {
     let especialidad = document.querySelector("#especialidad");
     especialidad.addEventListener("change", obtenerEspecialidad);
 
-    let modal = document.querySelector("button");
-    modal.addEventListener("submit",modal);
 }
 
 function enviarForm(e) {
     e.preventDefault();
+    modalPrueba();
     obtenerNombre();
 }
 
-function modal()
+function modalPrueba()
 {
     let nombre = document.getElementById("nombre").value;
+    console.log(nombre);
     const modalToggle = document.getElementById('exampleModal'); 
     
-    if(nombre !=' '){
-    //myModal.show(modalToggle) 
+    if(nombre !=''){
+        modalToggle.show(); 
     }
 }
 
