@@ -6,11 +6,24 @@ function inicio() {
     cobertura.addEventListener("change", obtenerCobertura);
     let especialidad = document.querySelector("#especialidad");
     especialidad.addEventListener("change", obtenerEspecialidad);
+
+    let modal = document.querySelector("button");
+    modal.addEventListener("submit",modal);
 }
 
 function enviarForm(e) {
     e.preventDefault();
     obtenerNombre();
+}
+
+function modal()
+{
+    let nombre = document.getElementById("nombre").value;
+    const modalToggle = document.getElementById('exampleModal'); 
+    
+    if(nombre !=' '){
+    //myModal.show(modalToggle) 
+    }
 }
 
 function obtenerNombre() {
